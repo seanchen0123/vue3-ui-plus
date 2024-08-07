@@ -42,9 +42,4 @@ export interface ButtonProps {
    * 是否自动聚焦
    */
   autofocus?: boolean
-
-  /**
-   * 点击事件
-   */
-  onClick?: () => void
 }
