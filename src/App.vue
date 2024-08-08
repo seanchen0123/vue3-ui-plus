@@ -1,20 +1,3 @@
-<script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import Button from './components/Button/Button.vue'
-import Collapse from './components/Collapse/Collapse.vue'
-import CollapseItem from './components/Collapse/CollapseItem.vue'
-
-const buttonRef = ref(null)
-const openValue = ref(['a'])
-
-onMounted(() => {
-  console.log(buttonRef.value)
-  setTimeout(() => {
-    openValue.value = ['b']
-  }, 1000);
-})
-</script>
-
 <template>
   <div>
     <Button ref="buttonRef" type="success">Test</Button>
@@ -24,7 +7,7 @@ onMounted(() => {
     <Button disabled>Disabled Button</Button>
   </div>
 
-  <div style="width: 500px;;">
+  <div style="width: 500px;">
     <Collapse v-model="openValue" :accordion="false">
       <CollapseItem name="a" title="Title 1">
         <p>Content 1</p>
@@ -42,6 +25,26 @@ onMounted(() => {
       </CollapseItem>
     </Collapse>
   </div>
+  <Icon icon="fa-solid fa-arrow-up" type="primary" color="pink" />
+  <Icon icon="fa-solid fa-arrow-down" type="danger" />
 </template>
+
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import Button from './components/Button/Button.vue'
+import Collapse from './components/Collapse/Collapse.vue'
+import CollapseItem from './components/Collapse/CollapseItem.vue'
+import Icon from './components/Icon/Icon.vue'
+
+const buttonRef = ref(null)
+const openValue = ref(['a'])
+
+onMounted(() => {
+  // console.log(buttonRef.value)
+  setTimeout(() => {
+    openValue.value = ['b']
+  }, 1000);
+})
+</script>
 
 <style scoped></style>
