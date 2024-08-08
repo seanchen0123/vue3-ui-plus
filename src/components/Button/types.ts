@@ -42,4 +42,14 @@ export interface ButtonProps {
    * 是否自动聚焦
    */
   autofocus?: boolean
+
+  /**
+   * 图标
+   */
+  icon?: string
+
+  /**
+   * 是否展示加载中图标
+   */
+  loading?: boolean
 }

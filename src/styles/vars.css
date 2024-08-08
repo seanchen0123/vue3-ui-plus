@@ -68,9 +68,9 @@
 
   --vk-border-width: 1px;
   --vk-border-style: solid;
-  --vk-border-color-hover: var(--el-text-color-disabled);
-  --vk-border: var(--el-border-width) var(--el-border-style)
-    var(--el-border-color);
+  --vk-border-color-hover: var(--vk-text-color-disabled);
+  --vk-border: var(--vk-border-width) var(--vk-border-style)
+    var(--vk-border-color);
   --vk-border-radius-base: 4px;
   --vk-border-radius-small: 2px;
   --vk-border-radius-round: 20px;

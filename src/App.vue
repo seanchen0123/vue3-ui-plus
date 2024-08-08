@@ -5,9 +5,10 @@
     <Button round>Round Button</Button>
     <Button circle>VK</Button>
     <Button disabled>Disabled Button</Button>
+    <Button loading size="large">Loading Button</Button>
   </div>
 
-  <div style="width: 500px;">
+  <div style="width: 500px">
     <Collapse v-model="openValue" :accordion="false">
       <CollapseItem name="a" title="Title 1">
         <p>Content 1</p>
@@ -43,7 +44,7 @@ onMounted(() => {
   // console.log(buttonRef.value)
   setTimeout(() => {
     openValue.value = ['b']
-  }, 1000);
+  }, 1000)
 })
 </script>
 
