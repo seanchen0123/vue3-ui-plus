@@ -13,7 +13,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "lodash-es": "^4.17.21",
-    "vue": "^3.4.31"
+    "vue": "^3.4.31",
+    "@popperjs/core": "^2.11.8"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -25,6 +26,7 @@
     "postcss-nested": "^6.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
+    "vitest": "^2.0.5",
     "vue-tsc": "^2.0.24"
   }
 }

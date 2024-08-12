@@ -28,6 +28,12 @@
   </div>
   <Icon icon="fa-solid fa-arrow-up" type="primary" color="pink" />
   <Icon icon="fa-solid fa-arrow-down" type="danger" />
+  <Tooltip content="hello tooltip" placement="top" ref="tooltipRef" :popper-options="options">
+    <Button type="warning" plain >tooltip</Button>
+  </Tooltip>
+  <br />
+  <Button type="success" @click="tooltipOpen" >manual tooltip open</Button>
+  <Button type="danger" @click="tooltipClose" >manual tooltip close</Button>
 </template>
 
 <script setup lang="ts">
@@ -36,15 +42,25 @@ import Button from './components/Button/Button.vue'
 import Collapse from './components/Collapse/Collapse.vue'
 import CollapseItem from './components/Collapse/CollapseItem.vue'
 import Icon from './components/Icon/Icon.vue'
+import Tooltip from './components/Tooltip/Tooltip.vue'
+import { TooltipInstance } from './components/Tooltip/types'
+import { Options } from '@popperjs/core'
 
 const buttonRef = ref(null)
+const tooltipRef = ref<TooltipInstance | null>(null)
 const openValue = ref(['a'])
+const options: Partial<Options> = { placement: 'right-end'} 
+
+const tooltipOpen = () => {
+  tooltipRef.value?.show()
+}
+
+const tooltipClose = () => {
+  tooltipRef.value?.hide()
+}
 
 onMounted(() => {
   // console.log(buttonRef.value)
-  setTimeout(() => {
-    openValue.value = ['b']
-  }, 1000)
 })
 </script>
 
