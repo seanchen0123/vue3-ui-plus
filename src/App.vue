@@ -40,7 +40,15 @@
   <Button type="success" @click="tooltipOpen">manual tooltip open</Button>
   <Button type="danger" @click="tooltipClose">manual tooltip close</Button>
   <br />
-  <Dropdown :menu-options="menuOptions" placement="bottom" trigger="click">
+  <Dropdown
+    :menu-options="menuOptions"
+    placement="bottom"
+    trigger="click"
+    @visible-change="e => inlineConsole('visible-chage', e)"
+    @select="e => inlineConsole('select', e)"
+    manual
+    ref="tooltipRef"
+  >
     <Button type="primary">Dropdown</Button>
   </Dropdown>
 </template>
@@ -74,6 +82,10 @@ const tooltipOpen = () => {
 
 const tooltipClose = () => {
   tooltipRef.value?.hide()
+}
+
+const inlineConsole = (...args: any) => {
+  console.log(...args)
 }
 
 onMounted(() => {

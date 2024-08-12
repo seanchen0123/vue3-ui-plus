@@ -16,7 +16,7 @@
             <li
               v-if="item.divided"
               role="separator"
-              class="devided-placeholder"
+              class="divided-placeholder"
             />
             <li
               class="vk-dropdown__item"
@@ -72,7 +72,7 @@ const itemClick = (_e: MouseEvent, value: MenuOption) => {
 }
 
 defineExpose<DropdownInstance>({
-  show: tooltipRef?.value?.show,
-  hide: tooltipRef?.value?.hide
+  show: () => tooltipRef.value?.show(),
+  hide: () => tooltipRef.value?.hide()
 })
 </script>
