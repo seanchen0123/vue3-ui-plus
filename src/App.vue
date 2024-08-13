@@ -51,6 +51,7 @@
   >
     <Button type="primary">Dropdown</Button>
   </Dropdown>
+  <!-- <Message :message="h('div', 'hello message')" showClose /> -->
 </template>
 
 <script setup lang="ts">
@@ -64,6 +65,8 @@ import { TooltipInstance } from './components/Tooltip/types'
 import { Options } from '@popperjs/core'
 import Dropdown from './components/Dropdown/Dropdown.vue'
 import { MenuOption } from './components/Dropdown/types'
+// import Message from './components/Message/Message.vue'
+import { createMessage } from './components/Message/method'
 
 const buttonRef = ref(null)
 const tooltipRef = ref<TooltipInstance | null>(null)
@@ -90,6 +93,22 @@ const inlineConsole = (...args: any) => {
 
 onMounted(() => {
   // console.log(buttonRef.value)
+  createMessage({
+    message: 'hello message',
+    duration: 3000,
+    showClose: true
+  })
+  createMessage({
+    message: 'hello message again',
+    duration: 4000,
+    showClose: true,
+    type: 'success'
+  })
+  createMessage({
+    message: 'hello message three',
+    duration: 5000,
+    type: 'warning'
+  })
 })
 </script>
 
