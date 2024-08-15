@@ -1,9 +1,25 @@
 import { defineConfig } from 'vitepress'
+import { fileURLToPath, URL } from 'node:url'
+import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: 'My Awesome Project',
+  description: 'A VitePress Site',
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('../../src', import.meta.url))
+      }
+    }
+  },
+  markdown: {
+    config(md) {
+      md.use(containerPreview)
+      md.use(componentPreview)
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -18,6 +34,10 @@ export default defineConfig({
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
+      },
+      {
+        text: 'Basic',
+        items: [{ text: 'Button', link: '/components/button' }]
       }
     ],
 

@@ -41,9 +41,3 @@ defineExpose({
   ref: _ref
 })
 </script>
-
-<style>
-.vk-button {
-  background-color: var(--main-bg-color);
-}
-</style>
