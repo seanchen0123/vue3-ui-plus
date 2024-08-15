@@ -27,5 +27,5 @@ dist-ssr
 
 *.test.ts
 
-docs/.vitepress/cache/deps
-docs/.vitepress/dist
+docs/.vitepress/cache/
+docs/.vitepress/dist/
