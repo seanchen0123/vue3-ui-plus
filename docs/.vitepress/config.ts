@@ -1,6 +1,9 @@
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
-import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
+import {
+  containerPreview,
+  componentPreview
+} from '@vitepress-demo-preview/plugin'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitepress.dev/reference/site-config
@@ -37,7 +40,10 @@ export default defineConfig({
       },
       {
         text: 'Basic',
-        items: [{ text: 'Button', link: '/components/button' }]
+        items: [
+          { text: 'Button', link: '/components/button' },
+          { text: 'Input', link: '/components/input' }
+        ]
       }
     ],
 

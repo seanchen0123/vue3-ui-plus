@@ -26,6 +26,8 @@
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vitepress-demo-preview/component": "^2.3.2",
     "@vitepress-demo-preview/plugin": "^1.2.3",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^24.1.1",
     "postcss": "^8.4.41",
     "postcss-each": "^1.1.0",
     "postcss-nested": "^6.2.0",
