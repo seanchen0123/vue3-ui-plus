@@ -52,6 +52,8 @@
     <Button type="primary">Dropdown</Button>
   </Dropdown>
   <!-- <Message :message="h('div', 'hello message')" showClose /> -->
+  <Switch v-model="switchValue" />
+  <Switch v-model="switchValueStr" activeValue="right" inactiveValue="wrong" activeText="ON" inactiveText="OFF" />
 </template>
 
 <script setup lang="ts">
@@ -67,6 +69,7 @@ import Dropdown from './components/Dropdown/Dropdown.vue'
 import { MenuOption } from './components/Dropdown/types'
 // import Message from './components/Message/Message.vue'
 import { createMessage } from './components/Message/method'
+import Switch from './components/Switch/Switch.vue'
 
 const buttonRef = ref(null)
 const tooltipRef = ref<TooltipInstance | null>(null)
@@ -90,6 +93,9 @@ const tooltipClose = () => {
 const inlineConsole = (...args: any) => {
   console.log(...args)
 }
+
+const switchValue = ref(false)
+const switchValueStr = ref('wrong')
 
 onMounted(() => {
   // console.log(buttonRef.value)
